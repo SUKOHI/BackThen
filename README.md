@@ -58,7 +58,7 @@ You can save ID of user who saved/deleted through `revision_user_id`.
     $product->revision_user_id = 1; // User ID you want to save.
     $product->save();
 
-# Retrieve Revision ID and Unique ID
+# Retrieve Current Revision ID and Unique ID
 
     echo $product->revision_id;
     echo $product->revision_unique_id;
