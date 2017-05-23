@@ -10,7 +10,7 @@ Execute the following composer command.
 
     composer require sukohi/back-then:1.*
     
-then set EloquentArrayServiceProvider in your config/app.php.
+then set BackThenServiceProvider in your config/app.php.
 
     Sukohi\BackThen\BackThenServiceProvider::class, 
     
