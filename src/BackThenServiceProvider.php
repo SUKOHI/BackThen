@@ -2,7 +2,8 @@
 
 use Illuminate\Support\ServiceProvider;
 
-class BackThenServiceProvider extends ServiceProvider {
+class BackThenServiceProvider extends ServiceProvider
+{
 
     /**
      * Indicates if loading of the provider is deferred.
@@ -18,6 +19,9 @@ class BackThenServiceProvider extends ServiceProvider {
      */
     public function boot()
     {
+        $this->publishes([
+            __DIR__ . '/migrations' => database_path('migrations'),
+        ], 'migration');
     }
 
     /**
@@ -27,8 +31,16 @@ class BackThenServiceProvider extends ServiceProvider {
      */
     public function register()
     {
-        $this->publishes([
-            __DIR__.'/migrations' => database_path('migrations'),
-        ], 'migration');
+    }
+
+    /**
+     * Get the services provided by the provider.
+     *
+     * @return array
+     */
+    public function provides()
+    {
+        return ['back-then'];
     }
 }
+

@@ -9,7 +9,11 @@ A Laravel package for managing reivision of database.
 Execute the following composer command.
 
     composer require sukohi/back-then:1.*
+    
+then set EloquentArrayServiceProvider in your config/app.php.
 
+    Sukohi\BackThen\BackThenServiceProvider::class, 
+    
 # Preparation
 
 To make a table for this package, execute the following commands.
