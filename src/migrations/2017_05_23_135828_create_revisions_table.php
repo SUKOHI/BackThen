@@ -23,8 +23,9 @@ class CreateRevisionsTable extends Migration
             $table->string('unique_id');
             $table->text('old_value')->nullable();
             $table->text('new_value')->nullable();
-            $table->integer('user_id')->nullable();
+            $table->integer('user_id')->nullable()->unsigned();
             $table->timestamps();
+            $table->index(['model', 'model_id']);
         });
     }
 
